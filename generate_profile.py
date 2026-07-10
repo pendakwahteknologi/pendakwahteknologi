@@ -83,7 +83,7 @@ def fetch_stats():
         "stars": sum(r["stargazers_count"] for r in repos),
         "forks": sum(r["forks_count"] for r in repos),
         "commits": commits,
-        "top_langs": [k for k, _ in sorted(langs.items(), key=lambda kv: -kv[1])[:3]],
+        "top_langs": [k for k, _ in sorted(langs.items(), key=lambda kv: (-kv[1], kv[0]))[:3]],
     }
 
 
